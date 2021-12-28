@@ -1,11 +1,11 @@
 import React from 'react'
 
-function RegitserPage(){
+function RegisterPage(){
     return(
         <div>
-            RegitserPage
+            RegisterPage
         </div>
     )
 }
 
-export default RegitserPage
+export default RegisterPage

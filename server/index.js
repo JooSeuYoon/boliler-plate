@@ -24,6 +24,12 @@ app.get('/', (req, res) => {
   res.send('Hello World!!! You can do it')
 })
 
+ app.get('/api/hello', (req, res) => {
+
+
+   res.send("안녕하세요~")
+ })
+
 app.post('/api/users/register', (req, res) =>{
   //회원 가입 정보 client에서 가져오면 DB에 넣는다
 
