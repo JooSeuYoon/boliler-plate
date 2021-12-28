@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 5000
 const bodyParser = require('body-parser');
 const {User} = require("./models/User");
 const cookieParser = require('cookie-parser');
@@ -25,8 +25,6 @@ app.get('/', (req, res) => {
 })
 
  app.get('/api/hello', (req, res) => {
-
-
    res.send("안녕하세요~")
  })
 
