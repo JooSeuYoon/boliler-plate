@@ -37,7 +37,7 @@ function VideoDetailPage(props){
                             title={VideoDetail.writer.name} description={VideoDetail.description}>
                             </List.Item.Meta>
                         </List.Item>
-                        <Comment />
+                        <Comment postId = {videoId}/>
                     </div>
                 </Col>
                 <Col lg={6} xs={24}>
