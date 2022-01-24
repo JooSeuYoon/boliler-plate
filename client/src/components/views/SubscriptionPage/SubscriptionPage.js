@@ -4,20 +4,26 @@ import Title from 'antd/lib/typography/Title';
 import Axios from 'axios';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react'
-import { FaCode } from "react-icons/fa";
 
-function LandingPage() {
+function SubscriptionPage(){
+
     const [Video, setVideo] = useState([])
 
     useEffect(()=>{
-        Axios.get('/api/video/getVideos').then(response => {
+
+        const subVariable = {
+            userFrom : localStorage.getItem('userId')
+        }
+
+        Axios.post('/api/video/getSubscriptionVideos', subVariable).then(response => {
             if(response.data.success){
-                setVideo(response.data.videos)
+                setVideo(response.data.videoDetail)
             }else{
                 alert('비디오 가져오기를 실패 했습니다.');
             }
         })
     },[])
+
     const renderCard = Video.map((video, index) => {
 
         var minutes = Math.floor(video.duration/60);
@@ -51,4 +57,4 @@ function LandingPage() {
     )
 }
 
-export default LandingPage
+export default SubscriptionPage
