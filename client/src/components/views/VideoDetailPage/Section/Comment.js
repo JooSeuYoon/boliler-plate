@@ -3,6 +3,7 @@ import Axios from 'axios'
 import {useSelector } from 'react-redux' 
 import {Button, Input} from 'antd'
 import TextArea from "antd/lib/input/TextArea";
+import SingleComment from "./SingleComment";
 
 function Comment(props){
 
@@ -37,7 +38,10 @@ function Comment(props){
             <p>Replies</p>
             <hr />
 
-            { /*comments list*/}
+            {props.commentList && props.commentList.map((comment, index) => (
+                (!comment.responseTo && <SingleComment Comment = {comment} postId = {videoId}/>)
+            ))}
+
             {/*Rootcomments Form*/}
 
             <form style={{diplay: 'flex'}} onSubmit = {onSubmit}>
